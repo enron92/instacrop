@@ -1,0 +1,22 @@
+{
+  "name": "instacrop",
+  "version": "1.0.0",
+  "description": "Resize and frame images for Instagram",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pkg . --out-path bin"
+  },
+  "author": "Enrico Ceron <enron92@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-google": "0.14.0",
+    "jimp": "0.9.3",
+    "pkg": "4.4.2"
+  },
+  "pkg": {
+    "assets": "img/**/*"
+  }
+}
