@@ -34,15 +34,13 @@ jimp.read(__dirname + '/img/white.png', (err, bg) => {
       throw err;
     }
     const ratio = pic.bitmap.width / pic.bitmap.height;
-    if (ratio > 1) { // Landscape
+    if (ratio >= 1) { // Landscape or square
       pic.resize(1000, jimp.AUTO);
-    } else if (ratio < 1) { // Portrait
+    } else { // Portrait
       pic.resize(jimp.AUTO, 1000);
-    } else { // Square
-      pic.resize(1000, 1000);
     }
-    const x = ratio >= 1 ? 40 : (1080 - pic.bitmap.width) / 2;
-    const y = ratio >= 1 ? (1080 - pic.bitmap.height) / 2 : 40;
+    const x = (insta.width - pic.bitmap.width) / 2;
+    const y = (insta.height - pic.bitmap.height) / 2;
     bg.resize(insta.width, insta.height)
         .composite(pic, x, y)
         .quality(100)
