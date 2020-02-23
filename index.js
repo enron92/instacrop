@@ -17,7 +17,7 @@ if (input === '-h' || input === '--help') {
 
 if (!input) {
   console.error('Specify an input file');
-  if (!ouput) {
+  if (!output) {
     console.error('Specify an output file');
   }
   process.exit(1);
